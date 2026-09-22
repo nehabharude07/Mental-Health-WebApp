@@ -1,0 +1,27 @@
+from flask import Flask, render_template, request
+import pickle
+import numpy as np
+
+app = Flask(__name__)
+model = pickle.load(open('model.pkl', 'rb'))
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    age = int(request.form['age'])
+    gender = 1 if request.form['gender'] == 'male' else 0
+    sleep = int(request.form['sleep'])
+    exercise = int(request.form['exercise'])
+    stress = int(request.form['stress'])
+
+    features = np.array([[age, gender, sleep, exercise, stress]])
+    prediction = model.predict(features)[0]
+
+    result = "At Risk of Anxiety" if prediction == 1 else "Not at Risk"
+    return render_template('index.html', result=result)
+
+if __name__ == "__main__":
+    app.run(debug=True)
