@@ -1,0 +1,77 @@
+{
+  "dataset_report": {
+    "rows_loaded": 813,
+    "rows_dropped_bad_target": 273,
+    "cells_clipped_out_of_range": 168,
+    "rows_dropped_missing_features": 0,
+    "rows_clean": 540,
+    "class_counts": {
+      "No depression": 174,
+      "Mild": 128,
+      "Moderate": 120,
+      "Severe": 118
+    },
+    "unique_feature_rows": 30,
+    "contradictory_combinations": 18,
+    "total_combinations": 30,
+    "bayes_accuracy_ceiling": 0.5056
+  },
+  "cv_results": {
+    "baseline_majority": {
+      "mean": 0.32222222222222224,
+      "std": 0.0037037037037036978
+    },
+    "logistic_regression": {
+      "mean": 0.337037037037037,
+      "std": 0.039108726077672
+    },
+    "random_forest": {
+      "mean": 0.4148148148148148,
+      "std": 0.04913518207933925
+    },
+    "hist_gradient_boosting": {
+      "mean": 0.4462962962962963,
+      "std": 0.04588708034579211
+    }
+  },
+  "selected_model": "hist_gradient_boosting",
+  "cv_accuracy": 0.4462962962962963,
+  "holdout_accuracy": 0.46296296296296297,
+  "baseline_accuracy": 0.32222222222222224,
+  "reliable": false,
+  "reliability_threshold": 0.6,
+  "confusion_matrix": {
+    "labels": [
+      "Mild",
+      "Moderate",
+      "No depression",
+      "Severe"
+    ],
+    "matrix": [
+      [
+        9,
+        2,
+        4,
+        11
+      ],
+      [
+        0,
+        5,
+        9,
+        10
+      ],
+      [
+        0,
+        3,
+        24,
+        8
+      ],
+      [
+        4,
+        2,
+        5,
+        12
+      ]
+    ]
+  }
+}

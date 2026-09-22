@@ -1,0 +1,15 @@
+{
+  "name": "AI-Powered Mental Health Prediction System",
+  "version": "1.0.0",
+  "description": "AI-Powered Mental Health Prediction System",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^25.0.0"
+  },
+  "devDependencies": {},
+  "author": "Neha & Harshita Developer",
+  "license": "MIT"
+}
